@@ -1,8 +1,6 @@
 # POKEMON FLIP CARDS GAME
 
-```
-### Visit my projects at: https://pokemon-flip.netlify.app/
-```
+Visit my projects at: https://pokemon-flip.netlify.app/
 
 ## Project setup
 
