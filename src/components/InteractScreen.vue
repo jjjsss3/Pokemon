@@ -19,8 +19,7 @@
       </p>
       <p class="step">Step : {{ step }}</p>
     </div>
-
-    <div class="grid-container">
+    <div ref="grid" class="grid-container">
       <div
         v-for="(element, index) in arrayPokemon"
         :key="index"
@@ -30,6 +29,7 @@
           active: statusCard[index],
           isRight: rightPairs.includes(index),
         }"
+        :data-index="index"
       >
         <card-view :src="'icon_back'" class="card__face card__face--front" />
         <card-view :src="element" class="card__face card__face--back" />
@@ -73,6 +73,7 @@ export default {
       this.end_time = new Date();
     }, 1000);
   },
+
   methods: {
     onBack() {
       this.selectMode(["lobby"]);
@@ -168,26 +169,26 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  height: 100vh;
+  height: 95vh;
 }
 
 .container .info {
   width: v-bind("grids.item_width");
-  margin-bottom: 3vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 5vh;
+  top: 0;
 }
 .container .info p {
-  font-size: 20px;
+  font-size: 18px;
 }
 .container .info .back {
-  width: 5%;
+  width: 25px;
   cursor: pointer;
 }
 .grid-container {
-  height: 85vh;
-  margin-bottom: 5vh;
+  height: 90vh;
   display: grid;
   width: v-bind("grids.item_width");
   /* Use string interpolation to set the CSS properties */
@@ -233,11 +234,9 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    height: 100vh;
   }
   .container .info {
     width: 90%;
-    margin-bottom: 3vh;
     display: grid;
     /* Use string interpolation to set the CSS properties */
     grid-template-columns: 1fr 3fr 1fr;
@@ -252,7 +251,6 @@ export default {
     cursor: pointer;
   }
   .grid-container {
-    margin-bottom: 5vh;
     width: 90%;
     gap: 10px; /* Add any desired gap between items */
   }

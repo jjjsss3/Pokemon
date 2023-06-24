@@ -23,7 +23,7 @@ export default {
   justify-content: center;
   align-items: center;
   font-style: italic;
-  margin-bottom: 1vh;
+  height: 5vh;
 }
 .copyright a {
   /* font-weight: 800; */

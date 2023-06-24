@@ -1,23 +1,22 @@
 <template>
-  <Transition name="interact">
-    <main-screen v-if="status === 'lobby'" @selectMode="selectMode" />
-  </Transition>
-
-  <Transition name="interact">
-    <interact-screen
-      v-if="status === 'match'"
-      :mode="mode"
-      @selectMode="selectMode"
-    />
-  </Transition>
-  <Transition name="interact">
-    <result-screen
-      v-if="status === 'finished'"
-      @selectMode="selectMode"
-      :time="time"
-      :step="step"
-    />
-  </Transition>
+  <main-screen
+    class="screen"
+    v-if="status === 'lobby'"
+    @selectMode="selectMode"
+  />
+  <interact-screen
+    class="screen"
+    v-if="status === 'match'"
+    :mode="mode"
+    @selectMode="selectMode"
+  />
+  <result-screen
+    class="screen"
+    v-if="status === 'finished'"
+    @selectMode="selectMode"
+    :time="time"
+    :step="step"
+  />
   <copy-right-screen class="fixed-bottom" />
 </template>
 

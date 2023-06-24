@@ -48,7 +48,7 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
+  height: 95vh;
 }
 .screen .title {
   font-size: 50px;

@@ -41,7 +41,7 @@ export default {
   justify-content: center;
   position: relative;
 
-  height: 100vh;
+  height: 95vh;
   width: 100%;
 }
 .back {
